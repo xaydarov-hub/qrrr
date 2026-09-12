@@ -1,0 +1,378 @@
+:root {
+  --ink: #211d17;
+  --pine: #1f3d2e;
+  --pine-dark: #142a20;
+  --gold: #c9a227;
+  --paper: #f3eedf;
+  --card: #fbf8f0;
+  --rust: #a9432b;
+  --line: rgba(33, 29, 23, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", Georgia, serif;
+  margin: 0;
+  color: var(--pine-dark);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ---------- Admin page ---------- */
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+}
+
+.page__header {
+  max-width: 62ch;
+  margin-bottom: 40px;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--pine);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.page__header h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.lede {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(33, 29, 23, 0.75);
+}
+
+.add-form {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 20px;
+  margin-bottom: 40px;
+  max-width: 560px;
+}
+
+.add-form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.add-form__row {
+  display: flex;
+  gap: 10px;
+}
+
+.add-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.add-form button {
+  padding: 12px 20px;
+  background: var(--pine);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.add-form button:hover {
+  background: var(--pine-dark);
+}
+
+.add-form__qty {
+  width: 84px;
+}
+
+.add-form__qty label {
+  margin-bottom: 8px;
+}
+
+.add-form__qty input {
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.add-form__hint {
+  margin: 12px 0 0;
+  font-size: 0.82rem;
+  color: rgba(33, 29, 23, 0.6);
+  line-height: 1.5;
+}
+
+.empty {
+  border: 1px dashed var(--line);
+  padding: 32px;
+  text-align: center;
+  color: rgba(33, 29, 23, 0.6);
+  max-width: 560px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.grid--branches {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.branch-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--gold);
+  padding: 26px 22px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.branch-card:hover {
+  transform: translateY(-2px);
+  border-top-color: var(--pine);
+}
+
+.branch-card__eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.branch-card h3 {
+  font-size: 1.35rem;
+  margin: 2px 0 10px;
+}
+
+.branch-card__cta {
+  font-weight: 600;
+  color: var(--pine);
+  font-size: 0.9rem;
+}
+
+/* Ticket card */
+
+.ticket {
+  background: var(--card);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket__stub {
+  background: var(--pine);
+  color: #fff;
+  padding: 16px 18px;
+}
+
+.ticket__label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 2px;
+}
+
+.ticket__name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  word-break: break-word;
+}
+
+.ticket__perforation {
+  height: 0;
+  border-top: 2px dashed rgba(33, 29, 23, 0.25);
+  margin: 0;
+}
+
+.ticket__qr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0 16px;
+  background: #fff;
+}
+
+.ticket__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 16px 18px;
+}
+
+.ticket__actions button {
+  flex: 1;
+  min-width: 88px;
+  padding: 9px 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--pine);
+  color: #fff;
+}
+
+.ticket__actions button:hover {
+  background: var(--pine-dark);
+}
+
+.ticket__ghost {
+  background: transparent !important;
+  color: var(--pine) !important;
+  border: 1px solid var(--pine) !important;
+}
+
+.ticket__danger {
+  background: transparent !important;
+  color: var(--rust) !important;
+  border: 1px solid var(--rust) !important;
+}
+
+/* ---------- Call page (customer-facing) ---------- */
+
+.call-page {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--pine-dark);
+}
+
+.call-card {
+  background: var(--paper);
+  max-width: 420px;
+  width: 100%;
+  padding: 40px 32px;
+  text-align: center;
+  border-top: 6px solid var(--gold);
+}
+
+.call-card .eyebrow {
+  color: var(--rust);
+}
+
+.call-card h1 {
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  margin-bottom: 18px;
+}
+
+.call-card__hint {
+  color: rgba(33, 29, 23, 0.75);
+  line-height: 1.55;
+  margin: 0 0 28px;
+}
+
+.call-button {
+  width: 100%;
+  padding: 18px 20px;
+  background: var(--pine);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.call-button:not(:disabled):hover {
+  background: var(--pine-dark);
+}
+
+.call-button:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.call-button:disabled {
+  background: rgba(31, 61, 46, 0.35);
+  cursor: not-allowed;
+}
+
+.call-card__success {
+  background: rgba(31, 61, 46, 0.08);
+  border: 1px solid var(--pine);
+  color: var(--pine-dark);
+  font-weight: 700;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.call-card__error {
+  color: var(--rust);
+  margin-top: 14px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .add-form__row {
+    flex-direction: column;
+  }
+
+  .add-form__qty {
+    width: 100%;
+  }
+}
